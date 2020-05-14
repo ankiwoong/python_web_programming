@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lu-#mfwg-pd9e6@978dc)==@5+41ut=9#sl_p7nk!slx0q1fcp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True        # True : 개발 모드 / False : 운영 모드
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.56.101', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls.apps.PollsConfig',               # 추가(애플리케이션의 설정 클래스로 등록)
 ]
 
 MIDDLEWARE = [
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'            # 한국 시간
 
 USE_I18N = True
 
