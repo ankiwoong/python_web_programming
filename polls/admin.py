@@ -1,22 +1,20 @@
 from django.contrib import admin
 
+# Register your models here.(여기에 모델을 등록하십시오.)
 from polls.models import Question, Choice
 
 
-# StackedInline 방식
 # class ChoiceInline(admin.StackedInline):
-#     model = Choice
-#     extra = 2
-
-# TabularInline 방식
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 2
 
 
 class QuestionAdmin(admin.ModelAdmin):
+    # fields = ['pub_date', 'question_text']            # 필드 순서 변경
     fieldsets = [
         ('Question Statement', {'fields': ['question_text']}),
+        # ('Date Information', {'fields': ['pub_date']}),
         ('Date Information', {'fields': [
          'pub_date'], 'classes': ['collapse']}),
     ]
