@@ -4,7 +4,10 @@ from polls.models import Question, Choice
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    fields = ['pub_date', 'question_text']      # 필드 순서 변경
+    fieldsets = [
+        ('Question Statement', {'fields': ['question_text']}),
+        ('Date Information', {'fields': ['pub_date']}),
+    ]
 
 
 admin.site.register(Question, QuestionAdmin)
