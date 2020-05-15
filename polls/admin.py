@@ -4,14 +4,14 @@ from polls.models import Question, Choice
 
 
 # StackedInline 방식
-class ChoiceInline(admin.StackedInline):
-    model = Choice
-    extra = 2
-
-# TabularInline 방식
-# class ChoiceInline(admin.TabularInline):
+# class ChoiceInline(admin.StackedInline):
 #     model = Choice
 #     extra = 2
+
+# TabularInline 방식
+class ChoiceInline(admin.TabularInline):
+    model = Choice
+    extra = 2
 
 
 class QuestionAdmin(admin.ModelAdmin):
