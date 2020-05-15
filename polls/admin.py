@@ -6,7 +6,8 @@ from polls.models import Question, Choice
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Question Statement', {'fields': ['question_text']}),
-        ('Date Information', {'fields': ['pub_date']}),
+        ('Date Information', {'fields': [
+         'pub_date'], 'classes': ['collapse']}),
     ]
 
 
