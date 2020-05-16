@@ -1,0 +1,29 @@
+<!-- {% for %} 태그 -->
+<ul>
+    {% for athlete in athlete_list %}
+    <li>{{ athlete.name }}</li>
+    {% endfor %}
+</ul>
+
+<!-- {% if %} 태그 -->
+{% if athlete_list %}
+Number of athletes: {{ athlete_list|length }}
+{% elif athlete_in_locker_room_list %}
+Athletes should be out of the locker room soon!
+{% else %}
+No athletes.action-checkbox
+{% endif %}
+
+<!-- {% csrf_token %} 태그 -->
+<form action="." method="post">{% csrf_token %}</form>
+
+<!-- {% url %} 태그 -->
+<form action="{% url 'polls:vote' question.id %}" method="post"></form>
+
+<!-- {% with % } 태그 -->
+{% with total=business.employees.count %}
+{{ total }} people words at business
+{% endif %}
+
+<!-- {% load %} 태그 -->
+{% load somelibrary package.otherlibray %}
