@@ -1,0 +1,33 @@
+<!-- lower : name 변수 값의 모든 문자를 소문자로 바꿔주는 필터 -->
+{{ name|lower }}
+
+<!-- 필터 체인으로 연결 -->
+{{ text|escape|linebreaks }}
+
+<!-- truncatewords : 변수값 중에서 앞에 30개의 단어만 보여주고, 줄 바꿈 문자는 모두 없애줍니다. -->
+{{ bio|truncatewords:30 }}
+
+<!-- 필터의 인자에 빈칸이 있는 경우는 따옴표로 묶어줍니다. -->
+{{ list|join:" // " }}
+
+<!-- value 변수값이 False이거나 없는 경우, "nothing"으로 보여줍니다. -->
+{{ value|default:"nothing" }}
+
+<!-- value 변수값의 길이를 반환 -->
+{{ value|length }}
+
+<!-- value 변수값에서 HTML 태그를 모두 없애줍니다. -->
+{{ value|striptags }}
+
+<!-- results.html에서 사용했던 복수 접미사 필터 -->
+{{ value|pluralize }}
+
+<!-- value 변수값이 1이 아니면 복수 접미사 s를 붙여줍니다. -->
+{{ value|pluralize:"es" }}
+{{ value|pluralize:"ies" }}
+
+<!-- 더하기 필터 -->
+{{ value|add:"2" }}
+
+<!-- value 변수값과 add 필터의 인자가 모두 integer 타입이라고 간주하고 덧셈을 시도합니다. -->
+{{ first|add:second }}
